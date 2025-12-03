@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Plastic Waste Management</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .login-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        width: 350px;
+    }
+    .login-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2a9d8f;
+    }
+    .login-container input[type="email"],
+    .login-container input[type="password"],
+    .login-container input[type="tel"],
+    .login-container input[type="text"],
+    .login-container select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0 15px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .login-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #2a9d8f;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    .login-container button:hover {
+        background-color: #21867a;
+    }
+    
+    
+    .login-container .links {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+    .login-container .links .text {
+      color: grey;
+    }
+
+    .login-container .links a {
+        color: #2a9d8f;
+        text-decoration: none;
+    }
+    .login-container .links a:hover {
+        text-decoration: underline;
+    }
+    .otp-container {
+        display: none;
+    }
+</style>
+</head>
+<body>
+<div class="login-container">
+    <h2>Sign Up</h2>
+    <form id="loginForm" action="/login" method="POST">
+        <!-- Role Selection -->
+         <label for="role">Select a Role</label>
+        <select name="role" id="role" required>
+            <option value="">Select Role</option>
+            <option value="citizen">Citizen</option>
+            <option value="collector">Collector</option>
+            <option value="admin">Admin</option>
+        </select>
+
+        <!-- Email + Password -->
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+
+        <!-- Phone + OTP -->
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <div class="otp-container">
+            <input type="text" name="otp" placeholder="Enter OTP">
+            <button type="button" id="verifyOtp">Verify OTP</button>
+        </div>
+
+        <!-- Remember Me -->
+        <label>
+            <input type="checkbox" name="remember"> Remember me
+        </label>
+
+        <button type="submit">Login</button>
+
+        <!-- Links -->
+        <div class="links">
+            <a href="/reset-password">Forgot Password?</a>
+            <div class="text">
+          Already have an account? </div><a href="/register">Login</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Example JS to toggle OTP input after phone number is filled
+    const phoneInput = document.querySelector('input[name="phone"]');
+    const otpContainer = document.querySelector('.otp-container');
+    const loginForm = document.getElementById('loginForm');
+
+    phoneInput.addEventListener('input', () => {
+        if(phoneInput.value.length >= 10){
+            otpContainer.style.display = 'block';
+        } else {
+            otpContainer.style.display = 'none';
+        }
+    });
+
+    // Prevent form submission if OTP is required but not filled
+    loginForm.addEventListener('submit', e => {
+        if(phoneInput.value.length >= 10 && loginForm.otp.value.trim() === ''){
+            e.preventDefault();
+            alert('Please enter OTP');
+        }
+    });
+</script>
+</body>
+</html>
