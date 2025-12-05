@@ -149,3 +149,88 @@ footer div {
     width: 30px;
     margin-right: 10px;
 }
+/* ===== ABOUT ===== */
+.about {
+    padding: 60px 5%;
+    text-align: center;
+    line-height: 1.8;
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+}
+
+.about-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.about-container {
+
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-direction: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+}
+/* ===== NEWS ===== */
+.news{
+    padding: 60px 5%;
+    text-align: center;
+    line-height: 1.8;
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+}
+
+.news-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    
+}
+
+.news-container {
+
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-direction: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+}
+/* ===== CONTACT ===== */
+.contact{
+    padding: 60px 5%;
+    text-align: center;
+    line-height: 1.8;
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+}
+
+.contact-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    
+}
+
+.contact-container {
+
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-direction: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
