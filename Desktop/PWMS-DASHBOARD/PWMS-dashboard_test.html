@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Waste Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4ebe2;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #8a4b13;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+    background: #ffb066;
+    color: black;
+}
+
+/* Main Section */
+.main {
+    flex: 1;
+    padding: 20px 40px;
+}
+
+.stats-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 15px;
+    width: 210px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.stat-card.clickable {
+    cursor: pointer;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.chart-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.chart-card.wide {
+    grid-column: span 2;
+}
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2 class="logo">R-WMS</h2>
+        <ul>
+            <li class="active">Overview</li>
+            <li>Waste Analysis</li>
+            <li>Department Analysis</li>
+            <li>Vendor Analysis</li>
+            <li>Monthly Trends</li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h1>Monthly Trends</h1>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <h3>Total Waste Reported</h3>
+                <p id="totalWaste">0 kg</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Last Scheduled Pickup</h3>
+                <p id="lastPickup">—</p>
+            </div>
+
+            <div class="stat-card clickable" onclick="openReport()">
+                <h3>Report</h3>
+                <p>Submit a new report</p>
+            </div>
+
+            <div class="stat-card clickable" onclick="openSchedule()">
+                <h3>Schedule</h3>
+                <p>Set next pickup</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Recent Update</h3>
+                <p id="recentUpdate">No recent updates</p>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+
+            <div class="chart-card">
+                <h3>Avg Quantity (Kg) by Month</h3>
+                <canvas id="quantityChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Recycled Waste % by Month</h3>
+                <canvas id="recycleChart"></canvas>
+            </div>
+
+            <div class="chart-card wide">
+                <h3>Cost (USD) by Month</h3>
+                <canvas id="costChart"></canvas>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // --- Fake Data (you can hook to API later) ---
+const months = ["Jan", "Feb", "Mar", "Apr", "May"];
+const quantities = [25.7, 25.6, 27.0, 25.0, 35.9];
+const recycleRates = [19.7, 21.0, 21.4, 29.7, 30.0];
+const costs = [9800, 9500, 10300, 8700, 2236];
+
+// --- Dynamic Stats ---
+document.getElementById("totalWaste").textContent = 
+    quantities.reduce((a, b) => a + b, 0) + " kg";
+
+document.getElementById("lastPickup").textContent = "April 27, 2025";
+
+document.getElementById("recentUpdate").textContent = 
+    "5% increase in recycling last month";
+
+// --- Functions for buttons ---
+function openReport() {
+    alert("Opening Report Form...");
+}
+
+function openSchedule() {
+    alert("Opening Scheduling Module...");
+}
+
+// --- Charts ---
+new Chart(document.getElementById("quantityChart"), {
+    type: "bar",
+    data: {
+        labels: months,
+        datasets: [{
+            label: "Kg",
+            data: quantities,
+            backgroundColor: "#b05e11"
+        }]
+    }
+});
+
+new Chart(document.getElementById("recycleChart"), {
+    type: "bar",
+    data: {
+        labels: months,
+        datasets: [{
+            label: "%",
+            data: recycleRates,
+            backgroundColor: "#ff8a3c"
+        }]
+    }
+});
+
+new Chart(document.getElementById("costChart"), {
+    type: "line",
+    data: {
+        labels: months,
+        datasets: [{
+            label: "USD",
+            data: costs,
+            borderWidth: 3
+        }]
+    }
+});
+    </script>
+
+</body>
+</html>
