@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
             localStorage.setItem('user', JSON.stringify(frontendUser));
         } catch (error) {
             console.error('Failed to load user:', error);
-            logout();
+            // logout();
         } finally {
             setLoading(false);
         }

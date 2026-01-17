@@ -4,7 +4,7 @@
     min-height: 100vh;
 }
 
-/* Navbar */
+/* ===== NAVBAR ===== (Updated to match second design) */
 .navbar {
     background: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -13,32 +13,32 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    padding: 15px 0;
 }
 
 .navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     text-decoration: none;
-    color: #333;
 }
 
 .logo h2 {
     margin: 0;
     color: #0b8a34;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 30px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -48,35 +48,76 @@
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    font-size: 1rem;
     transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
 }
 
 .nav-links a:hover {
     color: #0b8a34;
 }
 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0b8a34;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
 .user-section {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
-.welcome-text {
-    color: #666;
+.user-section a {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
     font-size: 0.9rem;
+    transition: all 0.3s;
 }
 
-.welcome-text strong {
+.user-section a:first-child {
+    background: #0b8a34;
+    color: white;
+}
+
+.user-section a:first-child:hover {
+    background: #0a7a2e;
+}
+
+.user-section a:last-child {
+    background: transparent;
     color: #333;
+    border: 1px solid #ddd;
+}
+
+.user-section a:last-child:hover {
+    background: #f5f5f5;
+}
+
+.separator {
+    color: #ccc;
+    margin: 0 5px;
 }
 
 /* Main Content */
 .main-content {
     flex: 1;
-    margin-top: 70px; /* Account for fixed navbar */
+    margin-top: 80px; /* Account for fixed navbar */
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 .footer {
     background: #1c1c1c;
     color: white;
@@ -88,7 +129,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    margin-bottom: 30px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
 }
 
 .footer-section h3, .footer-section h4 {
@@ -125,8 +168,19 @@
     background: #0b8a34;
 }
 
-.social-icons img {
-    width: 18px;
-    height: 18px;
-    filter: brightness(0) invert(1);
+.social-icons a img {
+    width: 18px !important;
+    height: 18px !important;
+}
+
+/* Footer copyright */
+.footer-copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #777;
+    font-size: 0.9rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 0;
 }

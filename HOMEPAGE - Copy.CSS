@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    background: url('https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    position: relative;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+}
+
+.tag {
+    padding: 5px 12px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #4caf50;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ===== SUB-HERO ===== */
+.sub-hero {
+    background: linear-gradient(to right, #0f5132, #77dd77);
+    padding: 60px 5%;
+    text-align: center;
+    color: white;
+}
+
+.sub-hero h2 {
+    font-size: 2rem;
+}
+
+/* ===== SERVICES ===== */
+.services {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    width: 300px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.service-box img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #1c1c1c;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 5%;
+    flex-wrap: wrap;
+}
+
+footer div {
+    width: 30%;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    margin-right: 10px;
+}
+/* ===== ABOUT ===== */
+.about {
+    padding: 60px 5%;
+    text-align: center;
+    line-height: 1.8;
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+}
+
+.about-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.about-container {
+
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-direction: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+}
+/* ===== NEWS ===== */
+.news{
+    padding: 60px 5%;
+    text-align: center;
+    line-height: 1.8;
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+}
+
+.news-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    
+}
+
+.news-container {
+
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-direction: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+}
+/* ===== CONTACT ===== */
+.contact{
+    padding: 60px 5%;
+    text-align: center;
+    line-height: 1.8;
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+}
+
+.contact-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    
+}
+
+.contact-container {
+
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
