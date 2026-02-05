@@ -56,21 +56,6 @@ const LoginPage = () => {
                 <h2>Login to Plastic Waste Management System</h2>
                 
                 <form onSubmit={handleSubmit} className={styles.loginForm}>
-                    <div className={styles.formGroup}>
-                        <label>Select Role</label>
-                        <select
-                            name="role"
-                            value={formData.role}
-                            onChange={handleChange}
-                            required
-                            className={styles.formControl}
-                        >
-                            <option value="">Select Role</option>
-                            <option value="reporter">Reporter</option>
-                            <option value="collector">Collector</option>
-                            <option value="admin">Admin</option>
-                        </select>
-                    </div>
                     
                     <div className={styles.formGroup}>
                         <label>Email Address</label>
