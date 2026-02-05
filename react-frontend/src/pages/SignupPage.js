@@ -69,21 +69,7 @@ const SignupPage = () => {
                 <p className={styles.subtitle}>Join Plastic Waste Management System</p>
                 
                 <form onSubmit={handleSubmit} className={styles.signupForm}>
-                    <div className={styles.formGroup}>
-                        <label>Select Role</label>
-                        <select
-                            name="role"
-                            value={formData.role}
-                            onChange={handleChange}
-                            required
-                            className={styles.formControl}
-                        >
-                            <option value="citizen">Reporter</option>
-                            <option value="collector">Collector</option>
-                            <option value="admin">Admin</option>
-                        </select>
-                    </div>
-                    
+                   
                     <div className={styles.formGroup}>
                         <label>Full Name</label>
                         <input
